@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Compte-rendu de TP1</title>
+  </head>
+  <body>
+    <center> <u> <h1>Compte-rendu de TP1</h1> </u> </center>
+    <p>
+	Walid AMARA
+    </p>
+    <h2>Exercice 0 : On sort un papier et un crayon</h2>
+    <p>
+      Voilà, c'est fait !
+    </p>
+    <br>
+    <h2>Exercice 1 : On commence tranquillement !</h2>
+    <p>
+      ?
+    </p>
+    <br>
+    <h2><body>
+    <p style="color:#171C90";>
+    Exercice 2&nbsp;: Document HTML de base</h2></body></p>
+
+    <h3>À quoi servent les tags h1, h2 et h3 ?</h3>
+    <p>
+    	Les tags 'h1', 'h2' servent à écrire des textes avec une police d'écriture de plus en plus petite(sous forme de titre). La balise h1 sera plus imposante qu'une balise h3
+    </p>
+    
+    <h3>À quoi sert le tag p ?</h3>
+    <p>
+       Les tags 'p' servent à écrire du texte sous forme de paragraphe
+    </p>
+    <br>
+    <h2><body>
+    <p style="color:#171C90";>Exercice 3 : Uniform Resource Locator</h2></body></p>
+    <h3>Quel est le nom de la machine à laquelle vous accédez ?
+    </h3>
+
+    <p>La machine dont nous accédons est w3.org</p>
+
+    <h3>Quel est le nom de domaine auquel vous accédez ?
+    </h3>
+
+    <p>Le nom de domaine auquel j'accède est www.w3.org .</p>
+    <h4>Lorsque j'execute cette commande: </h4>
+    <pre class="full-width"> host w3.org</pre>
+    <p>La première ligne correspond à l'adresse IPV4 associé au lien. </p>
+    <p>La seconde ligne correspond à l'adresse IPV6 associé au lien.</p>
+    <p>Nous utilisons les noms de machines car elles sont plus faciles à retenir qu'une série de chffre, dans cet exemple, nous préférons retenir <b>'w3.org'</b> que <b>'128.30.52.100</b>.</p>
+    <p><pre class="full-width"> traceroute 128.30.52.100</pre>La commande permet de savoir comment sont routé les paquets/données.  </p>
+    <p>Le nom du réseau sur lequel est connecté l'université est: 'gwetud.u-pem.fr' </p>
+    <ul>
+      <p>Les réseaux traversés sont:</p>
+      <li>vl1488-te0-1-0-2-ren-nr-marne-rtr-091.noc.renater.fr</li>
+      <li>akamai.prolexic.com</li>
+      <li>195.220.83.114 </li>
+      <li>xe1-1-8-paris2-rtr-131.noc.renater.fr</li>
+      <li>po110.bs-a.sech-par.aloha-egal.netarch.akamai.com</li>
+      <li>ae120.access-a.sech-par.aloha-egal.netarch.akamai.com</li>
+      <li>dmz-rtr-1-external-rtr-3.mit.edu</li>
+      <li>dmz-rtr-2-dmz-rtr-1-2.mit.edu</li>
+      <li>mitnet.core-1-ext.csail.mit.edu</li>
+    </ul>
+    <br>
+    <pre class="full-width">host github.io</pre>
+    <p>Cette commande nous permet d'avoir l'adresse IP correspondant à cette machine. Les adresses IP sont donc: <b><u>185.199.111.153</u></b>, <b><u>185.199.110.153</u></b>, <b><u>185.199.109.153</u></b>, <b><u>185.199.108.153</u></b></p>
+
+    <h2><body>
+      <p style="color:#171C90";>Exercice 4 : Service HTTP</p>
+
+      <h2>Service HTTP</h2>
+    
+    <h3>Utilisation de la commande nc</h3>
+    <p>
+      On tape les commandes:
+      <ul>
+      <li> <pre class="full-width"> $nc -C monge.univ-mlv.fr 80 </pre> </li>
+      <li> <pre class="full-width"> GET /ens/ HTTP/1.0 </pre> </li>
+      </ul>
+    </p>
+    <p>
+      Le protocole HTTP correspond au port 80
+    </p>
+    <p>
+      HTTP/1.1 200 OK
+    </p>
+    <p>
+      Date: Fri, 28 Jan 2022 08:18:33 GMT
+    </p>
+    <p>
+      Server: Apache
+    </p>
+    <p>
+      Content-Length: 2957
+    </p>
+    <p>
+      Connection: close
+    </p>
+    <p>
+      Content-Type: text/html; charset=UTF-8
+    </p>
+    
+    <h3>À quoi correspondent les 3 valeurs sur la première ligne de l'en-tête ?</h3>
+    <p>
+      La première valeur correspond à la requête
+    </p>
+    <p>
+      La deuxième valeur corresepond au code status
+    </p>
+    <p>
+      La troisième valeur est la description du code status
+    </p>
+    
+    <h3>Quel est le nom du serveur Web ?</h3>
+    <p>
+      Le nom du serveur web est Apache
+    </p>
+    
+    <h3>À quoi correspond la valeur de Content-Type ?</h3>
+    <p>
+      La valeur Content-Type correspond au type de donnée renvoyée
+    </p>
+    
+    <h3>À quoi correspond la valeur de Content-Length ?</h3>
+    <p>
+      La valeur Content-Length correspond a la longueur du document
+    </p>
+
+    <h3>Même analyse avec GET /ens/toto.txt HTTP/1.0</h3>
+    <p>
+      On tape les commandes:
+      <ul>
+      <li> <pre class="full-width"> $nc -C monge.univ-mlv.fr 80 </pre> </li>
+      <li> <pre class="full-width"> GET /ens/toto.txt HTTP/1.0 </pre> </li>
+      </ul>
+    </p>
+    <p>
+      Le protocole HTTP correspond au port 80
+    </p>
+    <p>
+      HTTP/1.1 404 Not Found
+    </p>
+    <p>
+      Date: Fri, 28 Jan 2022 08:40:11 GMT
+    </p>
+    <p>
+      Server: Apache
+    </p>
+    <p>
+      Connection: close
+    </p>
+    <p>
+      Content-Type: text/html
+    </p>
+    
+    <h3>À quoi correspondent les 3 valeurs sur la première ligne de l'en-tête ?</h3>
+    <p>
+      La première valeur correspond à la requête
+    </p>
+    <p>
+      La deuxième valeur est le code status avec une erreure
+    </p>
+    <p>
+      La troisième valeur est la description du code status sans trouver la page
+    </p>
+    
+    <h3>Quel est le nom du serveur Web ?</h3>
+    <p>
+      Le nom du serveur web est Apache
+    </p>
+    
+    <h3>À quoi correspond la valeur de Content-Type ?</h3>
+    <p>
+      La valeur Content-Type correspond au type de donnée renvoyée
+    </p>
+    
+    <h3>À quoi correspond la valeur de Content-Length ?</h3>
+    <p>
+      Il n'y a pas de valeur Content-Length car il n'y a de pages
+    </p>
+    
+    <h3>Même analyse avec GET /index.html HTTP/1.0</h3>
+    <p>
+      On tape les commandes:
+      <ul>
+      <li> <pre class="full-width"> $nc -C monge.univ-mlv.fr 80 </pre> </li>
+      <li> <pre class="full-width"> GET /index.html HTTP/1.0 </pre> </li>
+      </ul>
+    </p>
+    <p>
+      Le protocole HTTP correspond au port 80
+    </p>
+    <p>
+      HTTP/1.1 302 Found
+    </p>
+    <p>
+      Date: Fri, 28 Jan 2022 08:44:10 GMT
+    </p>
+    <p>
+      Server: Apache
+    </p>
+    <p>
+      Location: http://igm.u-pem.fr/index.html
+    </p>
+    <p>
+      Content-Length: 279
+    </p>
+    <p>
+      Connection: close
+    </p>
+    <p>
+      Content-Type: text/html; charset=iso-8859-1
+    </p>
+    
+    <h3>À quoi correspondent les 3 valeurs sur la première ligne de l'en-tête ?</h3>
+    <p>
+      La première valeur correspond à la requête
+    </p>
+    <p>
+      La deuxième valeur est le code status 
+    </p>
+    <p>
+      La troisième valeur est la description du code status
+    </p>
+
+    <h3>Quel est le nom du serveur Web ?</h3>
+    <p>
+      Le nom du serveur web est Apache
+    </p>
+    
+    <h3>
+      À quoi correspond la valeur de Content-Type ?
+    </h3>
+    <p>
+      La valeur Content-Type correspond au type de donnée renvoyée
+    </p>
+    
+    <h3>À quoi correspond la valeur de Content-Length ?</h3>
+    <p>
+      La valeur Content-Length correspond a la longueur du document
+    </p>
+    
+    <h3>À quoi correspond la valeur de Location ?</h3>
+    <p>
+      La valeure location correspond a la machine globale qui contenant la page demandée
+    </p>
+    
+    <h3>wget monge.univ-mlv.fr/index.html</h3>
+    <p>
+      Redirection vers //igm.univ-gustave-eiffel.fr/index.html
+    </p>
+    <p>
+    </p>
+    <br />
+    <br />
+    <p>
+      --2022-01-28 10:08:51--  http://monge.univ-mlv.fr/index.html
+    </p>
+    <p>
+      Résolution de monge.univ-mlv.fr (monge.univ-mlv.fr)… 193.55.61.150<
+        </p>
+    <p>
+      Connexion à monge.univ-mlv.fr (monge.univ-mlv.fr)|193.55.61.150|:80… connecté.</p>
+    <p>
+      requête HTTP transmise, en attente de la réponse… 302 Found
+    </p>
+    <p>
+      Emplacement : http://igm.u-pem.fr/index.html [suivant]
+    </p>
+    <p>
+      --2022-01-28 10:08:51--  http://igm.u-pem.fr/index.html
+    </p>
+    <p>
+      Résolution de igm.u-pem.fr (igm.u-pem.fr)… 193.50.159.150
+    </p>
+    <p>
+      Connexion à igm.u-pem.fr (igm.u-pem.fr)|193.50.159.150|:80… connecté.
+    </p>
+    <p>
+      requête HTTP transmise, en attente de la réponse… 302 Found
+    </p>
+    <p>
+      Emplacement : https://igm.u-pem.fr/index.html [suivant]
+    </p>
+    <p>
+      --2022-01-28 10:08:51--  https://igm.u-pem.fr/index.html
+    </p>
+    <p>
+      Connexion à igm.u-pem.fr (igm.u-pem.fr)|193.50.159.150|:443… connecté.
+    </p>
+    <p>
+      requête HTTP transmise, en attente de la réponse… 301 Moved Permanently
+    </p>
+    <p>
+      Emplacement : //igm.univ-gustave-eiffel.fr/index.html [suivant]
+    </p>
+    <p>
+      --2022-01-28 10:08:51--  https://igm.univ-gustave-eiffel.fr/index.html
+    </p>
+    <p>
+      Résolution de igm.univ-gustave-eiffel.fr (igm.univ-gustave-eiffel.fr)… 193.55.45.10</p>
+    <p>
+      Connexion à igm.univ-gustave-eiffel.fr (igm.univ-gustave-eiffel.fr)|193.55.45.10|:443… échec : Connexion terminée par expiration du délai d'attente.</p>
+    <p>
+      Nouvel essai.</p>
+    <br/>
+    <p>--2022-01-28 10:11:02--  (essai :  2)  https://igm.univ-gustave-eiffel.fr/index.html</p>
+    <p>Connexion à igm.univ-gustave-eiffel.fr (igm.univ-gustave-eiffel.fr)|193.55.45.10|:443… </p>
+    <br />
+    <p>--2022-01-28 10:13:14--  (essai :  3)  https://igm.univ-gustave-eiffel.fr/index.html</p>
+    <p>Connexion à igm.univ-gustave-eiffel.fr (igm.univ-gustave-eiffel.fr)|193.55.45.10|:443…</p>
+  <script type="text/javascript">(function(){window['__CF$cv$params']={r:'6d53e2868e7040c9',m:'EJhiMnGdjC1Lxl5uZSFRmSja4fo0x5PUOVV6cZjKVIg-1643474243-0-AbE//lVg9qW7o6VQyim2CMImYhgWm96k+6M1oKhs8qCtDxXGJbwbJ2LilhV7SaQNZ71nJfCe1cKZu34ypSDhRpPAzfyWY7DEdbxPEarpW42Gv3bglNew5TFNr4zTQ83H+j333qzkKqbaMQPnKh9E3gePdT2p6UR5+H7rc4Ne5Rj0y6v/3yufKORW5nRhGLeaEaCiLU8PYaSz+2+mlfZw7ps=',s:[0x78e7396496,0x3d4de9dd1c],}})();</script></body>
+</html>
+
+    </body></h2>
+    <h3>Port TCP</h3>
+    <p></p>
+  </body>
+</html>
