@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    .div {
+      background-color: silver;
+      margin: 0px;
+      padding: 15px;
+      border: 1px solid black;
+      float: left;
+    }
+
+    .black {
+      background-color: black;
+      margin: 0px;
+      padding: 15px;
+      border: 1px solid silver;
+      float: left;
+    }
+
+    .red {
+      background-color: red;
+      margin: 0px;
+      padding: 15px;
+      border: 1px solid silver;
+      float: left;
+    }
+
+    .divv {
+      clear: left;
+    }
+
+  </style>
+  <script>
+    "use strict";
+  
+    const drawCheckerCell = function(color) {
+      if (color==0){
+      document.write(`<div class="div"></div>`);
+      }
+      if (color==1){
+        document.write(`<div class="black"></div>`);
+      }
+      if (color==2){
+        document.write(`<div class="red"></div>`);
+      }
+    };
+    
+    const drawCheckerLine = function(nbc,j,trfl) {
+        
+        for(let i=0; i<nbc; i=i+1){
+          if (i==j && trfl){
+            drawCheckerCell(2)
+          } else {
+              drawCheckerCell((j+i)%2);
+          }
+        }
+    };
+
+    const drawCheckerBoard = function(nbc,trfl) {
+      for(let i=0; i<nbc; i++){
+        drawCheckerLine(nbc,i,trfl);
+        document.write(`<div class="divv"></div>`);
+      }
+    };
+  </script>
+</head>
+<body>
+  <h2>Damier</h2>
+  <p>
+    Carré de 5x5
+  </p>
+  <script>
+    //drawCheckerCell();
+    drawCheckerBoard(5,true);
+  </script>
+  <br>
+  <p>
+    Carré de 3x3
+  </p>
+  <script>
+    drawCheckerBoard(3,false);
+  </script>
+</body>
+</html>
+
+
+
+
+  <h2>Question 1</h2>
+    <p>'Use strict' permet de mettre le mode par défaut, c'est-à-dire:</p>
+    <ul>
+      <li>Il n'y a pas d'erreur si une variable n'est pas déclarée</li>
+      <li>Il est possible de supprimer une déclaration avec <b>delete</b></li>
+      <li>010 n'est pas égal à 10</li>
+    </ul>
+  <h2>Question 2</h2>
+  <p> Document.write() permet d'effacer l'entierté de la partie HTML pour écrire uniquement ce qui est noté dans l'argument. Comme l'ordre de priorité dans l'execution est 
+    la partie script et ensuite la partie HTML, lorsque l'on execute notre programme, nous voyons la partie HTML et l'argument donné dans document.write().
+  </p>
+  <script>
+
