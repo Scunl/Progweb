@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!-- saved from url=(0055)https://vincentjuge1987.github.io/td/src/td07/exo1.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <script>
+    "use strict";
+  
+    const refresh = function() {
+      const date = new Date();
+      console.log(date.getHours(), date.getMinutes(), date.getSeconds())
+      
+    }
+    
+    const loaded = function() {
+      window.setInterval(refresh, 1000);
+    }
+
+    
+    
+  </script>
+
+</head>
+<body onload="loaded()">
+<h2>Horloge</h2>
+<p>1/ On peut voir écrit sur la console: "tick !".</p>
+<p>La balise <i>&lt;"body onload="loaded()"&gt;</i> permet d'éxécuter le script une fois que la page est complétement chargé.</body></p>
+<br>
+<p>2/ Nous pouvons utiliser la fonction setTimeout qui permet de réaliser une instruction sous un certain nombre de secondes.</p>
+<br>
+<p>7/ Il suffit de trouver le cosinus et le sinus du nombre sur lequel pointe l'aiguille et on obtient cosinus qui nous donne l'abscisse, et le sinus, l'ordonnée.
+</p>
+<canvas id="clock" width="600" height="600">
+</canvas>
+<script>
+    
+    const canvas = document.getElementById('clock');
+    const context = canvas.getContext("2d");
+    
+    
+    context.beginPath();
+    context.moveTo(300, 50);
+    context.lineTo(300, 250);
+    
+    context.stroke();
+    context.beginPath();
+    context.arc(300, 250, 200 , 0, Math.PI * 2);
+    context.stroke();
+
+
+    moveTo(300, 250)
+    let calc = 2*(Math.PI * data/60)  - (Math.PI) / 2;
+    context.lineTo(circlecenterX + radius * Math.cos(calc), circlecenterY + radius * Math.sin(calc));
+
+
+
+</script>
+
+
+</body></html>

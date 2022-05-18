@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<!-- saved from url=(0055)https://vincentjuge1987.github.io/td/src/td05/exo1.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   
+   <script src="./exo1_files/graph.js.téléchargement" type="text/javascript"></script>
+   <style>
+   div {
+   float: left;
+   padding: 5px 20px 5px 20px;
+   }
+   </style>
+   <script>
+   "use strict";
+
+   const colors = [
+   "Cornsilk", "BlanchedAlmond", "Bisque", "NavajoWhite", "Wheat",
+   "BurlyWood", "Tan", "RosyBrown", "SandyBrown", "Goldenrod",
+   "DarkGoldenrod", "Peru", "Chocolate", "SaddleBrown", "Sienna",
+   "Brown", "Maroon"
+   ];
+   
+   const graph = function(canvasId, array) {
+      if (array.length == 0) {
+         throw "array.length == 0";
+      }
+            
+      const min = array.reduce((a,b) => (a < b) ? a : b);
+      const max = array.reduce((a,b) => (a < b) ? b : a);
+         
+      const canvas = document.getElementById(canvasId);
+      const context = canvas.getContext("2d");
+      context.clearRect(0, 0, canvas.width, canvas.height);
+
+      context.beginPath();
+      context.strokeStyle = "black";
+      context.moveTo(0, canvas.height / 2);
+      context.lineTo(canvas.width, canvas.height / 2);
+      context.stroke();
+      
+   const addThree = function(array) {
+      
+   //context.translate(0, canvas.height / 2);
+   //context.scale(canvas.width / array.length, canvas.height / (min - max) / 2);
+         
+      array.forEach(function(v, i) {
+      context.fillStyle = colors[((v >= 0)? v: -v) % colors.length];
+      context.fillRect((i + 0.1) * canvas.width / array.length, canvas.height / 2, 0.8 * canvas.width / array.length, v * canvas.height / (min - max) / 2);
+
+      context.strokeText(v, (i + 0.4)* canvas.width / array.length, canvas.height /10);
+   });
+}
+};
+   
+
+   </script>
+</head>
+<body>
+   <h2>Exercice 1:
+   </h2>
+   <p>1) Le script permet de dessiner des graphs</p>
+<div>
+   <h2>Simple Array</h2>
+   <canvas id="graph1" width="500" height="200"></canvas>
+   <script>
+      const array = [11, 21, 5, -13, 2, 12, 19, 5];
+      graph('graph1', array);
+   </script>
+</div>
+<div>
+   <h2>Add 3</h2>
+   <canvas id="graph2" width="500" height="200"></canvas>
+   <script>
+      "use strict"
+      
+      const addThree = function(array) {
+         let array1 = []
+         for (let element of array) {
+            array1.push(element + 3) ;
+         }
+         return array1
+      
+   }
+      graph('graph2', addThree(array));
+   </script>
+</div>
+<div>
+   <h2>Add 3 (using a function)</h2>
+   <canvas id="graph3" width="500" height="200"></canvas>
+   <script>
+      const three = function(nb) {
+         return nb+3
+      }
+      const addThree2 = function(array){
+         return ApplyForEachElement(array, three);
+      }
+      
+      const ApplyForEachElement = function(array, fonction){
+         let array1 = [];
+         for (let element of array) {
+            array1.push(fonction(element));
+         }
+         return array1
+         
+      }
+      graph('graph3', addThree2(array));
+   </script>
+</div>
+<div>
+   <h2>Add 3 (using a three-line function)</h2>
+   <canvas id="graph4" width="500" height="200"></canvas>
+   <script>
+      const addThree3 = function(array) {
+         return applyForEachElement2(array, nb => nb + 3) ;
+      }
+
+      const applyForEachElement2 = function(array, fonction) {
+         var end = []
+         array.forEach(elem => end.push(fonction(elem))) ; 
+         return end
+      }
+
+      graph('graph4', addThree3(array));
+   </script>
+</div>
+<div>
+   <h2>add 3 (using map())</h2>
+   <canvas id="graph5" width="500" height="200"></canvas>
+   <script>
+      const addThree4 = function(tablo) {
+         
+         const mort = tablo.map(elem => elem + 3);
+         return mort;
+      }
+      graph('graph5', addThree4(array));
+   </script>
+</div>
+<div>
+   <h2>Sorted</h2>
+   <canvas id="graph6" width="500" height="200"></canvas>
+   <script>
+      const sortedArray = function(TABLWATER) {
+         const fin = TABLWATER.sort((nb1, nb2) => nb1 - nb2);
+         return fin;
+      }
+      graph('graph6', sortedArray(array));
+   </script>
+</div>
+<div>
+   <h2>Filtered</h2>
+   <canvas id="graph7" width="500" height="200"></canvas>
+   <script>
+      const positiveArray = function(WATERLO) {
+         const dus = WATERLO.filter(nb => nb >= 0);
+         return dus;
+      }
+   // j'ai mis des blagues pour m'amuser comme je le peux... :'(
+      graph('graph7', positiveArray(array));
+   </script>
+</div>
+
+
+</body>
+</html>
